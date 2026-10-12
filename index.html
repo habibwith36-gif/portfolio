@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habibur Rahman — Social Media Manager & Content Creator</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',system-ui,sans-serif; background:#FAF5EE; color:#1a1a1a; line-height:1.65; }
+  h1,h2,h3,.serif { font-family:'Playfair Display',Georgia,serif; }
+  .wrap { max-width:720px; margin:0 auto; padding:0 20px; }
+  /* header */
+  .topbar { display:flex; justify-content:space-between; align-items:center; padding:22px 0; border-bottom:1px solid #EDE4D6; }
+  .topbar .name { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; }
+  .topbar .name span { color:#B45309; }
+  .btn-dark { background:#1a1a1a; color:#fff; border:none; padding:12px 28px; border-radius:50px; font-weight:600; font-size:.95rem; cursor:pointer; text-decoration:none; display:inline-block; }
+  /* open to work */
+  .otw { display:inline-flex; align-items:center; gap:10px; background:#E6F4F1; border:1px solid #BFE3DD; color:#0F766E; font-weight:600; font-size:.92rem; padding:12px 22px; border-radius:50px; margin:26px 0 8px; }
+  .otw .dot { width:10px; height:10px; background:#0F766E; border-radius:50%; flex-shrink:0; }
+  /* hero */
+  .hero h1 { font-size:3rem; line-height:1.15; margin:18px 0 6px; font-weight:800; }
+  .hero h1 span { color:#B45309; }
+  .hero .role { font-size:1.35rem; font-weight:700; margin-bottom:14px; }
+  .hero .bio { color:#7A6E5D; font-size:1.05rem; margin-bottom:26px; }
+  .hero .bio strong { color:#1a1a1a; }
+  .pill-row { display:flex; flex-direction:column; gap:12px; margin-bottom:14px; }
+  .pill { display:inline-flex; align-items:center; gap:10px; padding:14px 24px; border-radius:50px; font-weight:600; font-size:1rem; text-decoration:none; width:fit-content; border:1.5px solid #E3D5C0; background:#fff; color:#1a1a1a; }
+  .pill.primary { background:#B45309; border-color:#B45309; color:#fff; }
+  .pill svg { width:22px; height:22px; flex-shrink:0; }
+  /* cards */
+  .card { background:#fff; border:1px solid #EADFCF; border-radius:24px; padding:32px 28px; margin:22px 0; }
+  .card h3 { font-size:1.6rem; margin-bottom:12px; }
+  .card p.desc { color:#7A6E5D; margin-bottom:8px; }
+  .img-card { padding:0; overflow:hidden; }
+  .img-card img { width:100%; display:block; border-radius:24px 24px 0 0; }
+  .img-card .cap { display:flex; justify-content:space-between; padding:18px 24px; font-weight:600; }
+  .img-card .cap span:last-child { color:#7A6E5D; font-weight:500; }
+  /* stats */
+  .stats { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:22px 0; }
+  .stat-card { background:#fff; border:1px solid #EADFCF; border-radius:20px; padding:26px 22px; }
+  .stat-card .big { font-family:'Playfair Display',serif; font-size:2.6rem; font-weight:800; }
+  .stat-card .lbl { color:#7A6E5D; font-size:.95rem; margin:6px 0 14px; }
+  .bar { height:8px; background:#F0E6D4; border-radius:4px; overflow:hidden; }
+  .bar i { display:block; height:100%; border-radius:4px; }
+  /* sections */
+  .section-title { font-size:2.2rem; font-weight:800; margin:44px 0 8px; }
+  .section-sub { color:#7A6E5D; font-size:1.05rem; margin-bottom:6px; }
+  ul.ticks { list-style:none; margin-top:14px; }
+  ul.ticks li { position:relative; padding-left:26px; margin-bottom:12px; }
+  ul.ticks li::before { content:''; position:absolute; left:2px; top:9px; width:9px; height:9px; background:#B45309; border-radius:50%; }
+  /* service cards */
+  .service { display:flex; gap:18px; }
+  .service .icon { width:64px; height:64px; flex-shrink:0; background:#FDF6EA; border:1px solid #EADFCF; border-radius:18px; display:flex; align-items:center; justify-content:center; font-size:1.7rem; color:#B45309; }
+  .service h3 { font-size:1.45rem; margin-bottom:8px; }
+  .service p { color:#7A6E5D; }
+  /* tags */
+  .tags { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+  .tag { padding:10px 22px; border-radius:50px; border:1.5px solid #E3D5C0; font-weight:600; font-size:.95rem; background:#fff; }
+  .tag.hot { color:#B45309; border-color:#D9A679; }
+  /* client cards */
+  .client-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; flex-wrap:wrap; gap:8px; }
+  .fb-badge { background:#E6F4F1; color:#0F766E; font-size:.75rem; font-weight:700; letter-spacing:.06em; padding:8px 18px; border-radius:50px; }
+  .client-stats { display:flex; gap:36px; margin:18px 0; padding-top:18px; border-top:1px solid #EFE6D6; }
+  .client-stats .n { font-family:'Playfair Display',serif; font-size:2rem; font-weight:800; }
+  .client-stats .l { color:#7A6E5D; font-size:.9rem; }
+  .visit-btn { display:flex; align-items:center; justify-content:center; gap:10px; background:#FDF6EA; border:1px solid #EADFCF; border-radius:50px; padding:16px; font-weight:700; font-size:1.05rem; text-decoration:none; color:#1a1a1a; margin-top:6px; }
+  /* videos */
+  .video-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0; }
+  .video-card { background:#fff; border:1px solid #EADFCF; border-radius:20px; overflow:hidden; }
+  .video-card iframe { width:100%; aspect-ratio:9/13; border:0; display:block; background:#000; }
+  .video-card .vc { padding:14px 16px; }
+  .video-card .vc h4 { font-size:.98rem; margin-bottom:4px; }
+  .video-card .vc p { color:#7A6E5D; font-size:.82rem; }
+  .vbadge { display:inline-block; background:#FDF6EA; color:#B45309; font-size:.72rem; font-weight:700; padding:4px 12px; border-radius:20px; margin-bottom:8px; letter-spacing:.04em; }
+  /* experience */
+  .exp-date { color:#B45309; font-weight:700; font-size:1.05rem; }
+  .exp-loc { color:#7A6E5D; margin-bottom:10px; }
+  /* follow */
+  .follow-note { color:#7A6E5D; margin:20px 0; font-size:.98rem; }
+  footer { text-align:center; padding:36px 20px; color:#7A6E5D; font-size:.9rem; border-top:1px solid #EDE4D6; margin-top:40px; }
+  footer a { color:#B45309; text-decoration:none; font-weight:600; }
+  @media(max-width:560px){ .hero h1{font-size:2.3rem;} .section-title{font-size:1.8rem;} .video-grid{grid-template-columns:1fr 1fr;} .stats{grid-template-columns:1fr 1fr;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="name">HABIBUR <span>RAHMAN</span></div>
+    <a class="btn-dark" href="https://www.linkedin.com/in/habibur-rahman-143863428" target="_blank">LinkedIn Profile</a>
+  </div>
+
+  <div class="otw"><span class="dot"></span> Open to work — Remote Worldwide · Gulf · Bangladesh · USA · Canada · UK · Australia</div>
+
+  <div class="hero">
+    <h1>HABIBUR <span>RAHMAN</span></h1>
+    <div class="role">Social Media Manager · Content Creator · AI Content Specialist</div>
+    <p class="bio">7+ years growing digital audiences from zero to <strong>2M+ followers</strong> across Facebook, TikTok, YouTube and Instagram. I combine viral short-form storytelling with AI-powered workflows (Sora 2, Grok AI, Midjourney) to help brands publish faster — without losing creativity.</p>
+    <div class="pill-row">
+      <a class="pill primary" href="https://www.tiktok.com/@imrulhabib" target="_blank">TikTok @imrulhabib · 70K+</a>
+      <a class="pill" href="https://www.facebook.com/share/1cV4PQqgGm/?mibextid=wwXIfr" target="_blank">Facebook · 730K+</a>
+      <a class="pill" href="https://www.facebook.com/share/1Bsncad1q8/?mibextid=wwXIfr" target="_blank">Facebook · 690K+</a>
+      <a class="pill" href="https://www.youtube.com/@imrulactivity" target="_blank">YouTube @imrulactivity · 200K+</a>
+      <a class="pill" href="https://www.instagram.com/imrulactivity/" target="_blank">Instagram @imrulactivity · 4K+</a>
+      <a class="pill" href="https://www.linkedin.com/in/habibur-rahman-143863428" target="_blank">Connect on LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="card img-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Doha_skyline_2015.jpg/1280px-Doha_skyline_2015.jpg" alt="Doha, Qatar">
+    <div class="cap"><span>Doha, Qatar</span><span>Top relocation target</span></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card"><div class="big">1.8M+</div><div class="lbl">Facebook — 730K + 690K + 400K followers (3 pages)</div><div class="bar"><i style="width:95%;background:#B45309"></i></div></div>
+    <div class="stat-card"><div class="big">70K+</div><div class="lbl">TikTok followers (new account)</div><div class="bar"><i style="width:12%;background:#0F766E"></i></div></div>
+    <div class="stat-card"><div class="big">200K+</div><div class="lbl">YouTube subscribers</div><div class="bar"><i style="width:22%;background:#D9A019"></i></div></div>
+    <div class="stat-card"><div class="big">164.3K+</div><div class="lbl">🇺🇸 USA audience — 6 AI content pages I created</div><div class="bar"><i style="width:20%;background:#1D4ED8"></i></div></div>
+    <div class="stat-card"><div class="big">4K+</div><div class="lbl">Instagram followers</div><div class="bar"><i style="width:5%;background:#1a1a1a"></i></div></div>
+  </div>
+
+  <h2 class="section-title">About me</h2>
+  <p class="section-sub">Content creator turned social media manager — I don't just manage accounts, I build audiences.</p>
+  <div class="card">
+    <h3>What I do best</h3>
+    <p class="desc">Results-driven Social Media Manager, Content Creator and AI Content Specialist with over 7 years of hands-on experience in digital content creation, audience growth and social media management. Specialised in combining creative storytelling, travel & lifestyle blogging, and cutting-edge AI video workflows.</p>
+    <ul class="ticks">
+      <li>Scaled multi-platform channels to a combined <strong>2M+ followers/subscribers</strong></li>
+      <li>Daily short-form production for Reels, TikTok & YouTube Shorts</li>
+      <li>Data-driven hooks, titles and hashtags that maximise retention & reach</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Gulf & Middle East experience</h3>
+    <p class="desc">From 2022–2024 I lived and created in Saudi Arabia — documenting travel, culture and landmarks across the Kingdom. That gave me deep, first-hand experience with Middle East audience behaviour, content preferences and community engagement.</p>
+    <ul class="ticks">
+      <li>Based in Cumilla, Bangladesh — <strong>open to Remote Worldwide & relocation</strong></li>
+      <li>Track 1 — Gulf: Qatar · Saudi Arabia · UAE / Dubai · Bahrain · Oman</li>
+      <li>Track 2 — Global: Remote Worldwide (priority) · Bangladesh · USA · Canada · UK · Australia</li>
+      <li>Education: BA, Arabic Islamic University, Dhaka</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">What I can do for your brand</h2>
+  <p class="section-sub">End-to-end social media — from strategy to daily publishing.</p>
+  <div class="card"><div class="service"><div class="icon">📈</div><div><h3>Social Media Management</h3><p>Full account management, content calendars, brand positioning and community engagement across Facebook, TikTok, YouTube & Instagram.</p></div></div></div>
+  <div class="card"><div class="service"><div class="icon">▶️</div><div><h3>Short-Form Video Strategy</h3><p>Viral hooks, scripting and editing for Reels, TikTok and Shorts — optimised for watch-time, retention and shares.</p></div></div></div>
+  <div class="card"><div class="service"><div class="icon">✨</div><div><h3>AI Content Workflows</h3><p>Sora 2, Grok AI & Midjourney pipelines plus local LLM deployment — faster production, consistent quality, lower cost per video.</p></div></div></div>
+  <div class="card"><div class="service"><div class="icon">🌍</div><div><h3>Travel & Lifestyle Content</h3><p>Location-based storytelling that showcases destinations, culture and brands — built from 2+ years creating across Saudi Arabia.</p></div></div></div>
+
+  <h2 class="section-title">My video work</h2>
+  <p class="section-sub">AI-generated stories and real travel vlogs — all with English narration.</p>
+  <h3 class="serif" style="font-size:1.4rem;margin:18px 0 4px">🤖 AI Content</h3>
+  <div class="video-grid">
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1p004Ltk0jAhRd_GPXkgWml75KIuO94d6/preview" allowfullscreen></iframe><div class="vc"><span class="vbadge">AI VIDEO</span><h4>Lighthouse Ship Tour</h4><p>A day aboard a Turkish ship — tour, prayer & iftar at sea.</p></div></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1zgtrMTgabYn3XbNk2oXEJJWEOSZ_Bumn/preview" allowfullscreen></iframe><div class="vc"><span class="vbadge">AI VIDEO</span><h4>Helicopter Grocery Delivery</h4><p>A month's supplies airlifted to a lone lighthouse.</p></div></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1jKuT0yE7FQgEdAU-MCR6ZVCOoTGEL8HO/preview" allowfullscreen></iframe><div class="vc"><span class="vbadge">AI VIDEO</span><h4>Swimming with Sharks</h4><p>A daring morning swim meets a great white shark.</p></div></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1zNiSUevWXDERfvjAXu1FS26RISpiVRmG/preview" allowfullscreen></iframe><div class="vc"><span class="vbadge">AI VIDEO</span><h4>Hoisting the National Flag</h4><p>Raising the flag atop the lighthouse.</p></div></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/17JB9po_x67Coi-dCuCzOJf5IkqECsImt/preview" allowfullscreen></iframe><div class="vc"><span class="vbadge">AI VIDEO</span><h4>The Cow Story</h4><p>A heartwarming tale of a man and his cow.</p></div></div>
+  </div>
+  <h3 class="serif" style="font-size:1.4rem;margin:18px 0 4px">🎬 Travel Vlogs</h3>
+  <div class="video-grid">
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1gmn0OW569E1UdKAb8KPpfXmOn-NjIuxm/preview" allowfullscreen></iframe><div class="vc"><span class="vbadge">VLOG</span><h4>Flood Situation in Bangladesh</h4><p>A call for help — Feni, Cumilla & Noakhali.</p></div></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1St5miUO1T8HuSHzwUl4trGASurD4YFhL/preview" allowfullscreen></iframe><div class="vc"><span class="vbadge">VLOG</span><h4>Asking People in Makkah</h4><p>Where are pilgrims from? Street interviews.</p></div></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/15inMdjCNYfdPNZ-dsuYgIHDi_P2RPsxS/preview" allowfullscreen></iframe><div class="vc"><span class="vbadge">VLOG</span><h4>Madina City Tour</h4><p>Hop-on hop-off bus through the holy city.</p></div></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1Eaer2sQ5FUmmSrgWgYoAqLw5K5zaO7z9/preview" allowfullscreen></iframe><div class="vc"><span class="vbadge">VLOG</span><h4>Zaitoon Restaurant — Cumilla</h4><p>A stunning restaurant tour & food vlog.</p></div></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1CgA97SlAeqmUM0xpLlWKeVAKLk5eNVbN/preview" allowfullscreen></iframe><div class="vc"><span class="vbadge">VLOG</span><h4>Makkah City Bus Tour</h4><p>Sightseeing through Makkah's streets.</p></div></div>
+  </div>
+
+  <h2 class="section-title">My AI Content Pages</h2>
+  <p class="section-sub">6 Facebook pages I created and grow myself — <strong>164.3K combined followers</strong>, top audience: USA 🇺🇸</p>
+  <div class="card">
+    <div class="client-head"><h3>Fluffy Feelings</h3><span class="fb-badge">🇺🇸 TOP AUDIENCE: USA</span></div>
+    <p class="desc">Cute & fluffy animals · <strong>63K followers</strong></p>
+    <a class="visit-btn" href="https://www.facebook.com/share/1Cdu6bn2Td/?mibextid=wwXIfr" target="_blank">Visit Page</a>
+  </div>
+  <div class="card">
+    <div class="client-head"><h3>Beautiful of Cows</h3><span class="fb-badge">🇺🇸 TOP AUDIENCE: USA</span></div>
+    <p class="desc">Beautiful cows from around the world · <strong>54K followers</strong></p>
+    <a class="visit-btn" href="https://www.facebook.com/share/1BP1madkTa/?mibextid=wwXIfr" target="_blank">Visit Page</a>
+  </div>
+  <div class="card">
+    <div class="client-head"><h3>Belcher Way</h3><span class="fb-badge">🇺🇸 TOP AUDIENCE: USA</span></div>
+    <p class="desc">Engaging viral content · <strong>24K followers</strong></p>
+    <a class="visit-btn" href="https://www.facebook.com/profile.php?id=61556873207874" target="_blank">Visit Page</a>
+  </div>
+  <div class="card">
+    <div class="client-head"><h3>Classic Car Fans</h3><span class="fb-badge">🇺🇸 TOP AUDIENCE: USA</span></div>
+    <p class="desc">Classic cars community · <strong>11K followers</strong></p>
+    <a class="visit-btn" href="https://www.facebook.com/share/1JRYYWdrZP/?mibextid=wwXIfr" target="_blank">Visit Page</a>
+  </div>
+  <div class="card">
+    <div class="client-head"><h3>ViralSpark</h3><span class="fb-badge">🇺🇸 TOP AUDIENCE: USA</span></div>
+    <p class="desc">Viral entertainment — Funny · Emotional · Amazing · Unexpected · <strong>8.8K followers</strong></p>
+    <a class="visit-btn" href="https://www.facebook.com/profile.php?id=61594514030851" target="_blank">Visit Page</a>
+  </div>
+  <div class="card">
+    <div class="client-head"><h3>Heard in Silence</h3><span class="fb-badge">🇺🇸 TOP AUDIENCE: USA</span></div>
+    <p class="desc">Motivational & inspirational reels · <strong>3.5K followers</strong></p>
+    <a class="visit-btn" href="https://www.facebook.com/share/1Ar7bViCdA/?mibextid=wwXIfr" target="_blank">Visit Page</a>
+  </div>
+  <h2 class="section-title">Skills & tools</h2>
+  <p class="section-sub">The stack behind 2M+ followers.</p>
+  <div class="card">
+    <h3>Platforms & Growth</h3>
+    <div class="tags"><span class="tag hot">Facebook Reels</span><span class="tag hot">TikTok</span><span class="tag hot">YouTube Shorts</span><span class="tag">Audience Analytics</span><span class="tag">Trend Analysis</span><span class="tag">Community Engagement</span></div>
+  </div>
+  <div class="card">
+    <h3>AI & Technology</h3>
+    <div class="tags"><span class="tag hot">Sora 2</span><span class="tag hot">Grok AI</span><span class="tag hot">Midjourney</span><span class="tag hot">Seedance AI</span><span class="tag hot">Hailuo AI</span><span class="tag hot">ChatGPT</span><span class="tag hot">Claude AI</span><span class="tag hot">Muse AI</span><span class="tag">Local LLM Deployment</span><span class="tag">Visual Prompt Engineering</span><span class="tag">AI Video Workflows</span></div>
+  </div>
+
+  <h2 class="section-title">Experience</h2>
+  <div class="card">
+    <div class="exp-date">Jan 2022 — Present</div>
+    <div class="exp-loc">Independent · Remote</div>
+    <h3>Lead Content Creator & AI Content Specialist</h3>
+    <ul class="ticks">
+      <li>Scaled multi-platform channels to a combined <strong>2M+ audience</strong> through data-driven content strategy and viral short-form optimisation.</li>
+      <li>Integrated AI tools (Sora 2, Grok AI) to automate visual pipelines and speed up high-volume production.</li>
+      <li>Optimised metadata, titles, hooks and hashtags to maximise retention and cross-platform reach.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="exp-date">Jan 2022 — Dec 2024</div>
+    <div class="exp-loc">Saudi Arabia</div>
+    <h3>Travel & Location Content Creator</h3>
+    <ul class="ticks">
+      <li>Documented locations, culture and landmarks across Saudi Arabia via travel blogging and video.</li>
+      <li>Built foundational expertise in Middle East audience acquisition and community engagement.</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">Follow my work</h2>
+  <p class="section-sub">See the content behind the numbers — live on Facebook, TikTok, YouTube, Instagram and LinkedIn.</p>
+  <div class="pill-row">
+    <a class="pill" href="https://www.facebook.com/share/1Bsncad1q8/?mibextid=wwXIfr" target="_blank"><strong>Facebook</strong>&nbsp; Channel 1 · 690K+</a>
+    <a class="pill" href="https://www.facebook.com/share/1DB5KWZSmp/?mibextid=wwXIfr" target="_blank"><strong>Facebook</strong>&nbsp; Channel 2 · 400K+</a>
+    <a class="pill" href="https://www.facebook.com/share/1cV4PQqgGm/?mibextid=wwXIfr" target="_blank"><strong>Facebook</strong>&nbsp; Channel 3 · 730K+</a>
+    <a class="pill" href="https://www.tiktok.com/@imrulhabib" target="_blank"><strong>TikTok</strong>&nbsp; @imrulhabib · 70K+</a>
+    <a class="pill" href="https://www.youtube.com/@imrulactivity" target="_blank"><strong>YouTube</strong>&nbsp; @imrulactivity · 200K+</a>
+    <a class="pill" href="https://www.instagram.com/imrulactivity/" target="_blank"><strong>Instagram</strong>&nbsp; @imrulactivity · 4K+</a>
+    <a class="pill" href="https://www.linkedin.com/in/habibur-rahman-143863428" target="_blank"><strong>LinkedIn</strong>&nbsp; Habibur Rahman</a>
+  </div>
+  <p class="follow-note">My own three Facebook channels above combine for 1.8M+ reach (730K+ + 690K+ + 400K+). My old TikTok account was suspended — the new account (@imrulhabib) already has 70K+ followers and growing fast.</p>
+
+</div>
+<footer>
+  <p>© 2026 Habibur Rahman · <a href="https://www.linkedin.com/in/habibur-rahman-143863428" target="_blank">LinkedIn</a></p>
+</footer>
+</body>
+</html>
